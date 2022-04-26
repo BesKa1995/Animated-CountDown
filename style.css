@@ -39,14 +39,31 @@ h4 {
 
 .final {
   position: fixed;
+  background-color: #eee;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
+  text-align: center;
+  width: 10rem;
 }
 
 .final.show {
   transform: translate(-50%, -50%) scale(1);
   animation: show .2s ease-out;
+}
+
+.final #replay {
+  color: #eee;
+  width: 100%;
+  border: none;
+  background-color: #3498db;
+  padding: .5rem 1rem;
+}
+
+.final #replay:hover {
+  background-color: #34ffdb;
+  color: #444;
 }
 
 @keyframes show {
