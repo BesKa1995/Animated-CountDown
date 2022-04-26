@@ -1,0 +1,130 @@
+html {
+  font-size: 0.625rem;
+}
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  margin: 0;
+  height: 100vh;
+}
+
+h4 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.counter {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  &.hide {
+    transform: translate(-50%, -50%) scale(0);
+    animation: hide .2s ease-out;
+  }
+}
+
+@keyframes hide {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+.final {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+
+  &.show {
+    transform: translate(-50%, -50%) scale(1);
+    animation: show .2s ease-out;
+  }
+}
+
+
+@keyframes show {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  0% {
+    transform: translate(-50%, -50%) scale(1.4);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+
+.nums {
+  color: #3498db;
+  font-size: 5rem;
+  position: relative;
+  width: 25rem;
+  height: 5rem;
+  overflow: hidden;
+
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(120deg);
+    transform-origin: bottom center;
+    transition: transform 1s ease;
+
+    &.in {
+      transform: translate(-50%, -50%) rotate(0deg);
+      animation: goIn .5s ease-in-out;
+    }
+    &.out {
+      animation: goOut .5s ease-in-out;
+    }
+  }
+}
+
+
+@keyframes goIn {
+  0% {
+    transform: translate(-50%, -50%) rotate(120deg);
+  }
+
+  30% {
+    transform: translate(-50%, -50%) rotate(-20deg);
+  }
+
+  60% {
+    transform: translate(-50%, -50%) rotate(10deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+
+
+
+@keyframes goOut {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  30% {
+    transform: translate(-50%, -50%) rotate(20deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(-120deg);
+  }
+}
